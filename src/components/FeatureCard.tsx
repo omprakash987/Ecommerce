@@ -3,12 +3,27 @@ import React from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
 // import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
+import photo1 from "@/app/photo1/page";
+import { useRouter } from "next/navigation";
+
 
 export default function BackgroundGradientDemo() {
+  const router = useRouter(); 
+
+
+
+function  handlephoto1(){
+  router.push("/photo1")
+  
+
+}
+
+
   return (
-    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-      <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
+    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center ">
+      <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 cursor-pointer">
         <Image
+        onClick={handlephoto1}
           src={`/images/photo1.webp`}
           alt="jordans"
           height="400"
